@@ -1,4 +1,8 @@
-CREATE TABLE IF NOT EXISTS bronze.crm_cust_info(
+-- create bronze schema
+CREATE SCHEMA IF NOT EXISTS bronze;
+
+-- create CRM tables
+CREATE TABLE IF NOT EXISTS bronze.crm_cust_info (
     cst_id INT,
     cst_key VARCHAR,
     cst_firstname VARCHAR,
@@ -8,7 +12,7 @@ CREATE TABLE IF NOT EXISTS bronze.crm_cust_info(
     cst_create_date VARCHAR
 );
 
-CREATE TABLE IF NOT EXISTS bronze.crm_prd_info(
+CREATE TABLE IF NOT EXISTS bronze.crm_prd_info (
     prd_id INT,
     prd_key VARCHAR,
     prd_nm VARCHAR,
@@ -18,7 +22,7 @@ CREATE TABLE IF NOT EXISTS bronze.crm_prd_info(
     prd_end_dt VARCHAR
 );
 
-CREATE TABLE IF NOT EXISTS bronze.crm_sales_details(
+CREATE TABLE IF NOT EXISTS bronze.crm_sales_details (
     sls_ord_num VARCHAR,
     sls_prd_key VARCHAR,
     sls_cust_id INT,
@@ -30,18 +34,18 @@ CREATE TABLE IF NOT EXISTS bronze.crm_sales_details(
     sls_price INT
 );
 
-CREATE TABLE IF NOT EXISTS bronze.erp_cust_az(
+CREATE TABLE IF NOT EXISTS bronze.erp_cust_az (
     cid VARCHAR,
     bdate VARCHAR,
     gen VARCHAR
 );
 
-CREATE TABLE IF NOT EXISTS bronze.erp_loc(
+CREATE TABLE IF NOT EXISTS bronze.erp_loc (
     cid VARCHAR,
     cntry VARCHAR
 );
 
-CREATE TABLE IF NOT EXISTS bronze.erp_px_cat(
+CREATE TABLE IF NOT EXISTS bronze.erp_px_cat (
     id VARCHAR,
     cat VARCHAR,
     subcat VARCHAR,
